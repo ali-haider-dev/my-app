@@ -29,7 +29,10 @@ yarn-error.*
 # macOS
 .DS_Store
 *.pem
-
+# AI Agents & IDE Folders
+.agent/
+.agents/
+.gemini/
 # local env files
 .env*.local
 

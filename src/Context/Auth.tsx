@@ -1,7 +1,6 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import createContextHook from '@nkzw/create-context-hook';
-import { useEffect, useState } from 'react';
-import { useNavigation } from '@react-navigation/native';
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import createContextHook from "@nkzw/create-context-hook";
+import { useEffect, useState } from "react";
 
 export interface User {
   id: string;
@@ -12,19 +11,19 @@ export interface User {
 export const [AuthProvider, useAuth] = createContextHook(() => {
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const navigation = useNavigation();
+
   useEffect(() => {
     loadUser();
   }, []);
 
   const loadUser = async () => {
     try {
-      const storedUser = await AsyncStorage.getItem('user');
+      const storedUser = await AsyncStorage.getItem("user");
       if (storedUser) {
         setUser(JSON.parse(storedUser));
       }
     } catch (error) {
-      console.error('Failed to load user:', error);
+      console.error("Failed to load user:", error);
     } finally {
       setIsLoading(false);
     }
@@ -34,11 +33,10 @@ export const [AuthProvider, useAuth] = createContextHook(() => {
     const mockUser: User = {
       id: Date.now().toString(),
       email,
-      name: email.split('@')[0],
+      name: email.split("@")[0],
     };
-    await AsyncStorage.setItem('user', JSON.stringify(mockUser));
+    await AsyncStorage.setItem("user", JSON.stringify(mockUser));
     setUser(mockUser);
-    navigation.navigate('HomeTabs'as never)
   };
 
   const signup = async (email: string, password: string, name: string) => {
@@ -47,12 +45,12 @@ export const [AuthProvider, useAuth] = createContextHook(() => {
       email,
       name,
     };
-    await AsyncStorage.setItem('user', JSON.stringify(mockUser));
+    await AsyncStorage.setItem("user", JSON.stringify(mockUser));
     setUser(mockUser);
   };
 
   const logout = async () => {
-    await AsyncStorage.removeItem('user');
+    await AsyncStorage.removeItem("user");
     setUser(null);
   };
 

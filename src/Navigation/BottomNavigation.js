@@ -20,12 +20,12 @@ export default function AppTabs() {
           paddingBottom: 5, // padding at the bottom
         },
         tabBarLabelStyle: {
-          fontSize: 12, 
-          fontWeight: "bold", 
+          fontSize: 12,
+          fontWeight: "bold",
           color: "black",
         },
-        tabBarActiveTintColor: "#ff4d4d", 
-        tabBarInactiveTintColor: "gray", 
+        tabBarActiveTintColor: "#ff4d4d",
+        tabBarInactiveTintColor: "gray",
       }}
     >
       <Tab.Screen
@@ -35,7 +35,6 @@ export default function AppTabs() {
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="home-outline" size={24} color={color} />
           ),
-         
         }}
       />
       <Tab.Screen
@@ -45,7 +44,6 @@ export default function AppTabs() {
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="person-circle-outline" size={30} color={color} />
           ),
-          
         }}
       />
     </Tab.Navigator>
