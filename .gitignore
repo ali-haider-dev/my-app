@@ -33,6 +33,7 @@ yarn-error.*
 .agent/
 .agents/
 .gemini/
+.github/
 # local env files
 .env*.local
 
