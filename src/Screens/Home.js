@@ -21,10 +21,10 @@ function HomeContent({ navigation }) {
   const { user, logout } = useAuth();
   const { hasBooksAccess } = usePayment();
 
-  useEffect(() => {
-    console.log("Home MOUNTED");
-    return () => console.log("Home UNMOUNTED");
-  }, []);
+  // useEffect(() => {
+  //   console.log("Home MOUNTED");
+  //   return () => console.log("Home UNMOUNTED");
+  // }, []);
 
   const handleLogout = async () => {
     await logout();

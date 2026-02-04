@@ -15,9 +15,10 @@ import { CustomHeader } from "../Components/CustomHeader";
 const Stack = createNativeStackNavigator();
 
 function RootStack() {
-  const { user, isLoading } = useAuth();
+  const { user, authLoading } = useAuth();
 
-  if (isLoading) {
+  // Only show splash screen on initial app load, NOT during API calls
+  if (authLoading) {
     return (
       <View
         style={{
@@ -39,7 +40,9 @@ function RootStack() {
     );
   }
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Navigator
+      screenOptions={{ headerShown: false, presentation: "formSheet" }}
+    >
       {!user ? (
         <>
           <Stack.Screen name="Auth" component={AuthScreen} />
@@ -54,6 +57,7 @@ function RootStack() {
             component={BooksScreen}
             options={{
               headerShown: true,
+              presentation: "formSheet",
               header: () => (
                 <CustomHeader title="Books" backgroundColor="#8b5cf6" />
               ),

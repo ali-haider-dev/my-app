@@ -9,15 +9,21 @@ import {
   Platform,
 } from "react-native";
 import { useForm, Controller } from "react-hook-form";
-import InputField from "../Components/InputField"; 
+import InputField from "../Components/InputField";
 import { SafeAreaView } from "react-native-safe-area-context";
-
-
+import { useCreateData } from "../Hooks/UserHooks";
 const Signup = ({ navigation }) => {
-  const { control, handleSubmit, formState: { errors } } = useForm();
-
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const createUser = useCreateData({ url: "/users", token, setErrors });
   const onSubmit = (data) => {
     console.log("Form Data:", data);
+    createUser.mutate(data, {
+      onSuccess: () => reset(), // optional: reset form after success
+    });
   };
 
   return (
@@ -89,7 +95,10 @@ const Signup = ({ navigation }) => {
           />
 
           {/* Signup Button */}
-          <TouchableOpacity style={styles.button} onPress={handleSubmit(onSubmit)}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={handleSubmit(onSubmit)}
+          >
             <Text style={styles.buttonText}>Sign Up</Text>
           </TouchableOpacity>
 

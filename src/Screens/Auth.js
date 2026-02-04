@@ -21,7 +21,8 @@ import { useAuth } from "../Context/Auth";
 
 export default function AuthScreen({ navigation }) {
   const [isLogin, setIsLogin] = useState(true);
-  const { login, signup,isLoading } = useAuth();
+  const { login, signup, isLoading } = useAuth();
+
   const {
     control,
     handleSubmit,
@@ -29,12 +30,12 @@ export default function AuthScreen({ navigation }) {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = async(data) => {
-    // console.log("Form Data:", data);
-    (isLogin
+  const onSubmit = async (data) => {
+    isLogin
       ? await login(data.email, data.password)
-      : await signup(data.email, data.password, data.name),
-      reset());
+      : await signup(data.email, data.password, data.name);
+
+    reset();
   };
 
   return (

@@ -1,15 +1,15 @@
-import {Dimensions} from 'react-native';
+import { Dimensions } from "react-native";
 
-export const {width} = Dimensions.get('window');
-export const {height} = Dimensions.get('window');
-
+export const { width } = Dimensions.get("window");
+export const { height } = Dimensions.get("window");
+export const BASE_URL = "https://express-api-black-kappa.vercel.app/api/auth";
 export const Colors = {
-  primary: '#0091CF',
-  white: '#FFF',
-  black: '#000',
-  gray: 'gray',
-  green: 'green',
-  grey: '#d9d9d9',
+  primary: "#0091CF",
+  white: "#FFF",
+  black: "#000",
+  gray: "gray",
+  green: "green",
+  grey: "#d9d9d9",
 };
 
 // fonts.ts
@@ -32,7 +32,7 @@ import {
   Poppins_800ExtraBold_Italic,
   Poppins_900Black,
   Poppins_900Black_Italic,
-} from '@expo-google-fonts/poppins';
+} from "@expo-google-fonts/poppins";
 
 export const FONT_FAMILY = {
   PoppinsThin100: Poppins_100Thin,

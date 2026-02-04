@@ -11,6 +11,9 @@ import {
   Poppins_500Medium,
   Poppins_900Black,
 } from "@expo-google-fonts/poppins";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient();
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -20,19 +23,21 @@ export default function App() {
   });
   if (!fontsLoaded) return <Text>Loading...</Text>;
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <NavigationContainer>
-        <AuthProvider>
-          <PaymentProvider>
-            <RootStack />
-          </PaymentProvider>
-        </AuthProvider>
-        <StatusBar
-          barStyle="dark-content"
-          backgroundColor="#ff0000"
-          translucent
-        />
-      </NavigationContainer>
-    </SafeAreaView>
+    <QueryClientProvider client={queryClient}>
+      <SafeAreaView style={{ flex: 1 }}>
+        <NavigationContainer>
+          <AuthProvider>
+            <PaymentProvider>
+              <RootStack />
+            </PaymentProvider>
+          </AuthProvider>
+          <StatusBar
+            barStyle="dark-content"
+            backgroundColor="#ff0000"
+            translucent
+          />
+        </NavigationContainer>
+      </SafeAreaView>
+    </QueryClientProvider>
   );
 }
