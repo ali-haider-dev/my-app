@@ -5,6 +5,7 @@ import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { useAuth } from "../Context/Auth";
 import { usePayment } from "../Context/payment";
 import { useIsFocused } from "@react-navigation/native";
+import { FONT_FAMILY } from "../constants";
 
 // Wrapper that only renders content when focused (React Navigation v7 workaround for unmountOnBlur)
 export default function HomeScreen({ navigation }) {
@@ -130,12 +131,13 @@ const styles = StyleSheet.create({
   greeting: {
     fontSize: 16,
     color: "#64748b",
+    fontFamily: FONT_FAMILY.PoppinsMedium500,
   },
   userName: {
     fontSize: 28,
-    fontWeight: "700",
     color: "#0f172a",
     marginTop: 4,
+    fontFamily: FONT_FAMILY.PoppinsBold700,
   },
   logoutButton: {
     width: 48,
@@ -175,13 +177,14 @@ const styles = StyleSheet.create({
   },
   cardTitle: {
     fontSize: 28,
-    fontWeight: "700",
     color: "#fff",
     marginBottom: 6,
+    fontFamily: FONT_FAMILY.PoppinsBold700,
   },
   cardDescription: {
     fontSize: 16,
     color: "rgba(255, 255, 255, 0.9)",
+    fontFamily: FONT_FAMILY.PoppinsRegular400,
   },
   lockBadge: {
     marginTop: 12,
@@ -193,7 +196,7 @@ const styles = StyleSheet.create({
   },
   lockText: {
     fontSize: 12,
-    fontWeight: "600",
     color: "#fff",
+    fontFamily: FONT_FAMILY.PoppinsSemiBold600,
   },
 });

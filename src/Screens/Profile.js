@@ -140,8 +140,17 @@ const styles = StyleSheet.create({
     borderRightWidth: 1,
     borderColor: "#f1f5f9",
   },
-  statNumber: { fontSize: 18, color: "#1e293b", fontWeight: "bold" },
-  statLabel: { fontSize: 12, color: "#94a3b8", marginTop: 2 },
+  statNumber: {
+    fontSize: 18,
+    color: "#1e293b",
+    fontFamily: FONT_FAMILY.PoppinsBold700,
+  },
+  statLabel: {
+    fontSize: 12,
+    color: "#94a3b8",
+    marginTop: 2,
+    fontFamily: FONT_FAMILY.PoppinsRegular400,
+  },
   menuSection: { paddingHorizontal: 20, marginTop: 10 },
   sectionTitle: {
     fontSize: 14,
@@ -181,7 +190,7 @@ const styles = StyleSheet.create({
     color: "#ef4444",
     fontSize: 16,
     marginLeft: 10,
-    fontWeight: "600",
+    fontFamily: FONT_FAMILY.PoppinsSemiBold600,
   },
 });
 

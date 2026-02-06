@@ -1,5 +1,6 @@
 import { mockProducts } from "../mocks/product";
 import { Ionicons } from "@expo/vector-icons";
+import { FONT_FAMILY } from "../constants";
 // import { StripeProvider, useStripe } from '@stripe/stripe-react-native';
 
 import React, { useState } from "react";
@@ -124,13 +125,14 @@ const styles = StyleSheet.create({
   },
   headerTitle: {
     fontSize: 28,
-    fontWeight: "700",
     color: "#0f172a",
     marginBottom: 4,
+    fontFamily: FONT_FAMILY.PoppinsBold700,
   },
   headerSubtitle: {
     fontSize: 16,
     color: "#64748b",
+    fontFamily: FONT_FAMILY.PoppinsRegular400,
   },
   productsGrid: {
     gap: 16,
@@ -162,19 +164,20 @@ const styles = StyleSheet.create({
   },
   productBadgeText: {
     fontSize: 12,
-    fontWeight: "600",
     color: "#059669",
+    fontFamily: FONT_FAMILY.PoppinsSemiBold600,
   },
   productName: {
     fontSize: 20,
-    fontWeight: "700",
     color: "#0f172a",
     marginBottom: 6,
+    fontFamily: FONT_FAMILY.PoppinsBold700,
   },
   productDescription: {
     fontSize: 14,
     color: "#64748b",
     marginBottom: 16,
+    fontFamily: FONT_FAMILY.PoppinsRegular400,
   },
   productFooter: {
     flexDirection: "row",
@@ -183,8 +186,8 @@ const styles = StyleSheet.create({
   },
   productPrice: {
     fontSize: 24,
-    fontWeight: "700",
     color: "#0f172a",
+    fontFamily: FONT_FAMILY.PoppinsBold700,
   },
   buyButton: {
     flexDirection: "row",
@@ -200,7 +203,7 @@ const styles = StyleSheet.create({
   },
   buyButtonText: {
     fontSize: 16,
-    fontWeight: "700",
     color: "#fff",
+    fontFamily: FONT_FAMILY.PoppinsBold700,
   },
 });

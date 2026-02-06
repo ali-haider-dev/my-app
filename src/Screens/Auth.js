@@ -18,6 +18,7 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import InputField from "../Components/InputField";
 import { useAuth } from "../Context/Auth";
+import { FONT_FAMILY } from "../constants";
 
 export default function AuthScreen({ navigation }) {
   const [isLogin, setIsLogin] = useState(true);
@@ -223,13 +224,14 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 36,
-    fontWeight: "700",
     color: "#fff",
     marginBottom: 8,
+    fontFamily: FONT_FAMILY.PoppinsBold700,
   },
   subtitle: {
     fontSize: 16,
     color: "#94a3b8",
+    fontFamily: FONT_FAMILY.PoppinsRegular400,
   },
   formContainer: {
     gap: 16,
@@ -252,8 +254,8 @@ const styles = StyleSheet.create({
   },
   toggleText: {
     fontSize: 16,
-    fontWeight: "600",
     color: "#94a3b8",
+    fontFamily: FONT_FAMILY.PoppinsSemiBold600,
   },
   toggleTextActive: {
     color: "#fff",
@@ -290,7 +292,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 18,
-    fontWeight: "700",
     color: "#fff",
+    fontFamily: FONT_FAMILY.PoppinsBold700,
   },
 });

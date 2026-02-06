@@ -1,4 +1,5 @@
 import { mockGames } from "../mocks/games";
+import { FONT_FAMILY } from "../constants";
 
 import { LinearGradient } from "expo-linear-gradient";
 
@@ -91,13 +92,14 @@ const styles = StyleSheet.create({
   },
   headerTitle: {
     fontSize: 28,
-    fontWeight: "700",
     color: "#0f172a",
     marginBottom: 4,
+    fontFamily: FONT_FAMILY.PoppinsBold700,
   },
   headerSubtitle: {
     fontSize: 16,
     color: "#64748b",
+    fontFamily: FONT_FAMILY.PoppinsRegular400,
   },
   gamesGrid: {
     gap: 16,
@@ -136,17 +138,18 @@ const styles = StyleSheet.create({
   },
   gameBadgeText: {
     fontSize: 12,
-    fontWeight: "700",
     color: "#fff",
+    fontFamily: FONT_FAMILY.PoppinsBold700,
   },
   gameTitle: {
     fontSize: 22,
-    fontWeight: "700",
     color: "#fff",
+    fontFamily: FONT_FAMILY.PoppinsBold700,
   },
   gameDescription: {
     fontSize: 14,
     color: "rgba(255, 255, 255, 0.9)",
+    fontFamily: FONT_FAMILY.PoppinsRegular400,
   },
   gameMeta: {
     flexDirection: "row",
@@ -162,7 +165,7 @@ const styles = StyleSheet.create({
   metaText: {
     fontSize: 12,
     color: "#fff",
-    fontWeight: "600",
+    fontFamily: FONT_FAMILY.PoppinsSemiBold600,
   },
   playButton: {
     width: 32,

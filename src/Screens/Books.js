@@ -1,5 +1,6 @@
 import { usePayment } from "../Context/payment";
 import { mockBooks } from "../mocks/books";
+import { FONT_FAMILY } from "../constants";
 
 import { LinearGradient } from "expo-linear-gradient";
 import { Feather } from "@expo/vector-icons";
@@ -193,15 +194,16 @@ const styles = StyleSheet.create({
   },
   lockedTitle: {
     fontSize: 32,
-    fontWeight: "700",
     color: "#fff",
     marginBottom: 12,
+    fontFamily: FONT_FAMILY.PoppinsBold700,
   },
   lockedDescription: {
     fontSize: 16,
     color: "rgba(255, 255, 255, 0.9)",
     textAlign: "center",
     marginBottom: 32,
+    fontFamily: FONT_FAMILY.PoppinsRegular400,
   },
   featuresContainer: {
     gap: 16,
@@ -216,7 +218,7 @@ const styles = StyleSheet.create({
   featureText: {
     fontSize: 18,
     color: "#fff",
-    fontWeight: "600",
+    fontFamily: FONT_FAMILY.PoppinsSemiBold600,
   },
   purchaseButton: {
     backgroundColor: "#fff",
@@ -227,9 +229,9 @@ const styles = StyleSheet.create({
   },
   purchaseButtonText: {
     fontSize: 18,
-    fontWeight: "700",
     color: "#6d28d9",
     textAlign: "center",
+    fontFamily: FONT_FAMILY.PoppinsBold700,
   },
   formatSelector: {
     flexDirection: "row",
@@ -254,8 +256,8 @@ const styles = StyleSheet.create({
   },
   formatButtonText: {
     fontSize: 16,
-    fontWeight: "600",
     color: "#64748b",
+    fontFamily: FONT_FAMILY.PoppinsSemiBold600,
   },
   formatButtonTextActive: {
     color: "#fff",
@@ -290,14 +292,15 @@ const styles = StyleSheet.create({
   },
   bookTitle: {
     fontSize: 18,
-    fontWeight: "700",
     color: "#0f172a",
     marginBottom: 4,
+    fontFamily: FONT_FAMILY.PoppinsBold700,
   },
   bookAuthor: {
     fontSize: 14,
     color: "#64748b",
     marginBottom: 8,
+    fontFamily: FONT_FAMILY.PoppinsMedium500,
   },
   bookMeta: {
     flexDirection: "row",
@@ -311,5 +314,6 @@ const styles = StyleSheet.create({
   metaText: {
     fontSize: 12,
     color: "#64748b",
+    fontFamily: FONT_FAMILY.PoppinsRegular400,
   },
 });

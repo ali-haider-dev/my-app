@@ -2,6 +2,7 @@ import React from "react";
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
+import { FONT_FAMILY } from "../constants";
 
 // import HomeStack from './stacks/HomeStack';
 // import ProfileStack from './stacks/ProfileStack';
@@ -16,13 +17,13 @@ export default function AppTabs() {
       screenOptions={{
         headerShown: false,
         tabBarStyle: {
-          height: 60, // height of the tab bar
-          paddingBottom: 5, // padding at the bottom
+          height: 60,
+          paddingBottom: 5,
         },
         tabBarLabelStyle: {
           fontSize: 12,
-          fontWeight: "bold",
           color: "black",
+          fontFamily: FONT_FAMILY.PoppinsSemiBold600,
         },
         tabBarActiveTintColor: "#ff4d4d",
         tabBarInactiveTintColor: "gray",
