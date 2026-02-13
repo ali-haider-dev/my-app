@@ -24,7 +24,11 @@ function HomeContent({ navigation }) {
   const { hasBooksAccess } = usePayment();
 
   // Fetch real-time user data
-  const { data: userData, isLoading: profileLoading } = useFetchData({
+  const {
+    data: userData,
+    isLoading: profileLoading,
+    error: profileError,
+  } = useFetchData({
     key: ["userProfile"],
     url: "/getUser",
     token: token,
@@ -33,7 +37,7 @@ function HomeContent({ navigation }) {
   //   console.log("Home MOUNTED");
   //   return () => console.log("Home UNMOUNTED");
   // }, []);
-
+  // console.log("Backend Message:", profileError?.message);
   const handleLogout = async () => {
     await logout();
   };
