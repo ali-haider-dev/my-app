@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(null);
   const [authLoading, setAuthLoading] = useState(true); // Only for initial app load
-
+  const [error, setError] = useState(null);
   // Load saved auth data on app start
   useEffect(() => {
     loadStoredAuth();
@@ -70,6 +70,7 @@ export const AuthProvider = ({ children }) => {
     },
     onError: (err) => {
       console.log("Login Error:", err.message);
+      setError(err.message);
       ToastAndroid.show(err.message || "Login failed", ToastAndroid.SHORT);
     },
   });
@@ -90,6 +91,7 @@ export const AuthProvider = ({ children }) => {
     },
     onError: (err) => {
       console.log("Signup Error:", err.message);
+      // setError(err.message);
       ToastAndroid.show(err.message || "Signup failed", ToastAndroid.SHORT);
     },
   });

@@ -6,6 +6,7 @@ import { useAuth } from "../Context/Auth";
 import { usePayment } from "../Context/payment";
 import { useIsFocused } from "@react-navigation/native";
 import { FONT_FAMILY } from "../constants";
+import { useFetchData } from "../Hooks/UserHooks";
 
 // Wrapper that only renders content when focused (React Navigation v7 workaround for unmountOnBlur)
 export default function HomeScreen({ navigation }) {
@@ -19,9 +20,15 @@ export default function HomeScreen({ navigation }) {
 }
 
 function HomeContent({ navigation }) {
-  const { user, logout } = useAuth();
+  const { user, token, logout } = useAuth();
   const { hasBooksAccess } = usePayment();
 
+  // Fetch real-time user data
+  const { data: userData, isLoading: profileLoading } = useFetchData({
+    key: ["userProfile"],
+    url: "/getUser",
+    token: token,
+  });
   // useEffect(() => {
   //   console.log("Home MOUNTED");
   //   return () => console.log("Home UNMOUNTED");
@@ -70,7 +77,9 @@ function HomeContent({ navigation }) {
         <View style={styles.header}>
           <View>
             <Text style={styles.greeting}>Welcome back,</Text>
-            <Text style={styles.userName}>{user?.name || "User"}</Text>
+            <Text style={styles.userName}>
+              {userData?.data?.name || user?.name || "User"}
+            </Text>
           </View>
           <Pressable onPress={handleLogout} style={styles.logoutButton}>
             <Ionicons name="log-out-outline" size={24} color="#ef4444" />

@@ -22,7 +22,7 @@ import { FONT_FAMILY } from "../constants";
 
 export default function AuthScreen({ navigation }) {
   const [isLogin, setIsLogin] = useState(true);
-  const { login, signup, isLoading } = useAuth();
+  const { login, signup, isLoading, error } = useAuth();
 
   const {
     control,

@@ -32,7 +32,7 @@ export const useFetchData = ({ key, url, token }) => {
  * POST / CREATE HOOK
  * ---------------------------
  */
-export const useCreateData = ({ url, token, setErrors = () => {} }) => {
+export const useCreateData = ({ url, token, key, setErrors = () => {} }) => {
   const queryClient = useQueryClient();
 
   return useMutation({
@@ -49,7 +49,7 @@ export const useCreateData = ({ url, token, setErrors = () => {} }) => {
         ToastAndroid.show("Created successfully!", ToastAndroid.SHORT);
 
         queryClient.invalidateQueries({
-          queryKey: [url],
+          queryKey: key,
         });
       }
     },
@@ -65,7 +65,7 @@ export const useCreateData = ({ url, token, setErrors = () => {} }) => {
  * PUT / UPDATE HOOK
  * ---------------------------
  */
-export const useUpdateData = ({ url, token, setErrors = () => {} }) => {
+export const useUpdateData = ({ url, token, key, setErrors = () => {} }) => {
   const queryClient = useQueryClient();
 
   return useMutation({
@@ -83,7 +83,7 @@ export const useUpdateData = ({ url, token, setErrors = () => {} }) => {
         ToastAndroid.show("Updated successfully!", ToastAndroid.SHORT);
 
         queryClient.invalidateQueries({
-          queryKey: [url],
+          queryKey: key,
         });
       }
     },
@@ -99,7 +99,7 @@ export const useUpdateData = ({ url, token, setErrors = () => {} }) => {
  * DELETE HOOK
  * ---------------------------
  */
-export const useDeleteData = ({ url, token }) => {
+export const useDeleteData = ({ url, token, key }) => {
   const queryClient = useQueryClient();
 
   return useMutation({
@@ -115,7 +115,7 @@ export const useDeleteData = ({ url, token }) => {
         ToastAndroid.show("Deleted successfully!", ToastAndroid.SHORT);
 
         queryClient.invalidateQueries({
-          queryKey: [url],
+          queryKey: key,
         });
       }
     },
